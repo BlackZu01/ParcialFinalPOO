@@ -1,8 +1,8 @@
 # Parking Lot excercise
 from __future__ import annotations
-from options import Options
-from user import User
-from bill import Bill
+from .options import Options
+from .user import User
+from .bill import Bill
 import numpy as np
 
 class ParkingLot(Options, User):

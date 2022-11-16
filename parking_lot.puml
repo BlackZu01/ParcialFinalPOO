@@ -1,0 +1,56 @@
+@startuml parking
+
+Class "abc.ABC" as abc {}
+
+abstract Class Options {
+    +{abstract} time_stand(user: User, option: int)
+    +{abstract} check_bill(user: User)
+    +{abstract} generateParking()
+}
+
+Class Bill {
+    type_auto: str 
+    charge_bill: int 
+}
+
+Class Auto {
+    type_car: str
+}
+
+Class User {
+    option: int 
+    time_standing: int 
+    car: Auto
+}
+
+Class ParkingLot {
+    parking: dict
+    time: int
+    pos_c: int 
+    pos_s: int 
+    pos_v: int 
+    poc_cf: int 
+    pos_sf: int 
+    pos_vf: int 
+
+    + time_stand(user: User, option: int)
+    + check_bill(user: User)
+    + generateMatrix()
+    + generateParking()
+    + process(pos: int, pos_f: int)
+    + assignParking(user: User, register: bool)
+    + keepTracks()
+    + showPark(matrix)
+    + showParkingLot()
+    + 
+}
+
+abc <|-- Options
+Options *-- User 
+User *-- Auto 
+Options <|-- ParkingLot
+User <|-- ParkingLot
+Bill <.. ParkingLot
+ParkingLot *--- User
+
+@enduml

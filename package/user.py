@@ -1,4 +1,4 @@
-from auto import Auto
+from .auto import Auto
 
 class User:
     def __init__(self, option: int, time_standing: int, car: Auto):

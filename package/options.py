@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from user import User
+from .user import User
 
 class Options(ABC):
     ''''
